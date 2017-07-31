@@ -6,8 +6,8 @@ const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const lessExtract = new ExtractTextPlugin('[name].[chunkhash:8]-one.css');
-const cssExtract = new ExtractTextPlugin('[name].[chunkhash:8]-two.css');
-const sassExtract = new ExtractTextPlugin('[name].[chunkhash:8]-three.css');
+const cssExtract = new ExtractTextPlugin('[name].[chunkhash:8].css');
+const sassExtract = new ExtractTextPlugin('style.[chunkhash:8].css');
 const postcssConfig = {
   loader: 'postcss-loader',
   options: {
@@ -18,14 +18,14 @@ const postcssConfig = {
 };
 
 const proConfig = webpackMerge(commonConfig, {
-  devtool: 'source-map',
+  devtool: false,
 
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: '[name].[chunkhash:8].js',
-    sourceMapFilename: '[name].[chunkhash:8].map',
+    // sourceMapFilename: '[name].[chunkhash:8].map',
     chunkFilename: '[id].[chunkhash:8].js',
-    publicPath: 'http://kfy.qianchuan.info/'
+    // publicPath: 'http://kfy.qianchuan.info/'
   },
 
   module: {
@@ -35,8 +35,7 @@ const proConfig = webpackMerge(commonConfig, {
         use: cssExtract.extract({
           fallbackLoader: 'style-loader',
           use: [
-            'css-loader?minimize&sourceMap&importLoaders=1',
-            postcssConfig
+            'css-loader?minimize&sourceMap&importLoaders=1'
           ]
         })
       },
@@ -77,6 +76,9 @@ const proConfig = webpackMerge(commonConfig, {
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false
+      },
+      output: {
+        ascii_only: true
       }
     })
   ]
