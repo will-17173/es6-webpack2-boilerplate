@@ -23,8 +23,13 @@ const commonConfig = {
         loader: 'json-loader'
       },
       {
-        test: /\.(jpg|png|gif|eot|svg|ttf|woff|woff2)(\?.*)?(#.*)?$/,
+        test: /\.(jpg|png|gif)(\?.*)?(#.*)?$/,
         loader: 'url-loader?name=[name].[hash].[ext]'
+      },      
+      {
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        exclude: /node_modules/,
+        loader: 'url-loader?limit=1024&name=fonts/[name].[ext]'
       }
     ]
   },
