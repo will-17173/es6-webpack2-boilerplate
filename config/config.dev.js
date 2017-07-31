@@ -28,8 +28,7 @@ const devConfig = webpackMerge(commonConfig, {
         test: /\.css$/,
         use: [
           'style-loader',
-          'css-loader',
-          postcssConfig
+          'css-loader'
         ]
       },
       {
