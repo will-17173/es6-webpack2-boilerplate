@@ -24,7 +24,7 @@ const proConfig = webpackMerge(commonConfig, {
     path: path.resolve(__dirname, '../dist'),
     filename: '[name].[chunkhash:8].js',
     // sourceMapFilename: '[name].[chunkhash:8].map',
-    chunkFilename: '[id].[chunkhash:8].js',
+    chunkFilename: '[id].[chunkhash:8].js'
     // publicPath: 'http://kfy.qianchuan.info/'
   },
 

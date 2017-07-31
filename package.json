@@ -15,7 +15,7 @@
     "coverage": "cross-env BABEL_ENV=test istanbul cover _mocha",
     "coveralls": "cat coverage/lcov.info | coveralls",
     "clean": "rm -rf dist && rm -rf coverage",
-    "build": "npm run clean && npm run test && cross-env BABEL_ENV=production webpack --progress --color --config config/config.prod.js",
+    "build": "npm run clean && cross-env BABEL_ENV=production webpack --progress --color --config config/config.prod.js",
     "postpublish": "git push --all && git push origin --tags"
   },
   "pre-commit": [
@@ -23,7 +23,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/maiwenan/es6-webpack2-boilerplate.git"
+    "url": "https://github.com/will-17173/es6-webpack2-boilerplate.git"
   },
   "keywords": [
     "es6",

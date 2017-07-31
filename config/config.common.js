@@ -25,7 +25,7 @@ const commonConfig = {
       {
         test: /\.(jpg|png|gif)(\?.*)?(#.*)?$/,
         loader: 'url-loader?name=[name].[hash].[ext]'
-      },      
+      },
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
         exclude: /node_modules/,
