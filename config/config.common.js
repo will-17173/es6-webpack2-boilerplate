@@ -38,6 +38,10 @@ const commonConfig = {
     ]
   },
 
+  externals: {
+    'jquery': 'jQuery'
+  },
+
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.scss', '.less', '.css']
   },
