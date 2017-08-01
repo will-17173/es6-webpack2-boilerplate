@@ -81,5 +81,8 @@
     "webpack-dashboard": "^0.3.0",
     "webpack-dev-server": "^2.4.1",
     "webpack-merge": "^4.0.0"
+  },
+  "dependencies": {
+    "handlebars-loader": "^1.5.0"
   }
 }

@@ -30,6 +30,10 @@ const commonConfig = {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
         exclude: /node_modules/,
         loader: 'url-loader?limit=1024&name=fonts/[name].[ext]'
+      },
+      {
+        test: /\.handlebars$/,
+        loader: 'handlebars-loader'
       }
     ]
   },
